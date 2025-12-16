@@ -1,0 +1,3 @@
+# Reflexión sobre medidas de seguridad en los lenguajes de programación
+
+En general, los lenguajes de programación modernos incorporan cada vez más mecanismos pensados para reducir errores típicos: gestión automática de memoria, controles de tipos y herramientas que ayudan a detectar fallos antes de llegar a producción. Aun así, ningún lenguaje “arregla” por sí solo los problemas de seguridad; si se validan mal los datos de entrada, se gestionan mal los errores o se configuran mal las librerías, las vulnerabilidades van a seguir apareciendo. Por eso, más que confiar solo en el lenguaje, la clave está en combinar lo que ofrece cada uno con buenas prácticas de programación segura, revisiones de código y pruebas específicas de seguridad.
