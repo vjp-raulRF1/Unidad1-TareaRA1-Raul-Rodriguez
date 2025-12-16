@@ -42,3 +42,12 @@ aqui tenemos estas tarifas, pero difieren de las esperadas en los tests test 5/7
 ![alt text](fallo5.png)
 
 ![alt text](sol5.png)
+
+al parecer hay mas errores con los precios que no saltaron antes porque el fallo que solucione evitaba el que salto ahora
+![alt text](nuevosfallos.png)
+
+ahora hay que aumentar el precio del enceraado para compensar 
+![alt text](fallo8.png)
+
+corregimos
+![alt text](sol8.png)

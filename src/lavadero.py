@@ -83,7 +83,7 @@ class Lavadero:
     def _cobrar(self):
         """
         Calcula y añade los ingresos según las opciones seleccionadas (Requisitos 4-8).
-        Precio base: 5.00€ (Implícito, 5.00€ de base + 1.50€ de prelavado + 1.00€ de secado + 1.00€ de encerado = 8.50€)
+        Precio base: 5.00€ (Implícito, 5.00€ de base + 1.50€ de prelavado + 1.00€ de secado + 1.20€ de encerado = 8.70€)
         """
         coste_lavado = 5.00
         
@@ -94,7 +94,7 @@ class Lavadero:
             coste_lavado += 1.00 
             
         if self.__encerado:
-            coste_lavado += 1.00 
+            coste_lavado += 1.20 
             
         self.__ingresos += coste_lavado
         return coste_lavado
