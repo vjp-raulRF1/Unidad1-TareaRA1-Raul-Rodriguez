@@ -51,3 +51,7 @@ ahora hay que aumentar el precio del enceraado para compensar
 
 corregimos
 ![alt text](sol8.png)
+
+sin errores
+![alt text](nofallos.png)
+

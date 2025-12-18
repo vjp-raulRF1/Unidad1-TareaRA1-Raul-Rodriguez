@@ -2,7 +2,7 @@ site_name: Documentación Tarea 1 RA 1
 
 nav:
   - Home: index.md
-  - Código-comentado: codigo_comentado.md
+  - Código-comentado: codigo_comentado.ipynb
   - Ejecución-y-depuración: ejecucion_debug.md
   - Tests: tests.md
   - Sandbox: sandbox.md

@@ -2,7 +2,7 @@
 
 ## Contenidos
 
-1. [Código comentado](codigo_comentado.md)
+1. [Código comentado](codigo_comentado.ipynb)
 2. [Ejecución y depuración](ejecucion_debug.md)
 3. [Tests](tests.md)
 4. [Sandbox](sandbox.md)
