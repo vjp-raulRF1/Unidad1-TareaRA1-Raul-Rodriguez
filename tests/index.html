@@ -38,19 +38,19 @@
                                 <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../codigo_comentado.md" class="nav-link">Código-comentado</a>
+                                <a href="../codigo_comentado.ipynb" class="nav-link">Código-comentado</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../ejecucion_debug.md" class="nav-link">Ejecución-y-depuración</a>
+                                <a href="../ejecucion_debug/" class="nav-link">Ejecución-y-depuración</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./" class="nav-link active" aria-current="page">Tests</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../sandbox.md" class="nav-link">Sandbox</a>
+                                <a href="../sandbox/" class="nav-link">Sandbox</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../reflexion.md" class="nav-link">Reflexión</a>
+                                <a href="../reflexion/" class="nav-link">Reflexión</a>
                             </li>
                         </ul>
 
@@ -61,12 +61,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../ejecucion_debug/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../sandbox/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -88,8 +88,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#tests" class="nav-link">Tests</a>
+            <li class="nav-item" data-bs-level="1"><a href="#ejecucion-de-tests-con-pytest-desde-la-linea-de-comandos" class="nav-link">Ejecución de tests con pytest desde la línea de comandos</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#crear-el-entorno-virtual" class="nav-link">Crear el entorno virtual</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#activar-el-entorno-virtual" class="nav-link">Activar el entorno virtual</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ejecutar-el-fichero-de-tests-principal" class="nav-link">Ejecutar el fichero de tests principal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ciclo-de-depuracion-con-pytest" class="nav-link">Ciclo de depuración con pytest</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#evidencias-graficas" class="nav-link">Evidencias gráficas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -97,8 +117,61 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="tests">Tests</h1>
-<p>Descripción de las pruebas automatizadas del proyecto, comandos de ejecución y criterios de éxito.</p></div>
+<h1 id="ejecucion-de-tests-con-pytest-desde-la-linea-de-comandos">Ejecución de tests con pytest desde la línea de comandos</h1>
+<p>En esta sección se documenta cómo crear y usar un entorno virtual (<code>venv</code>) y cómo ejecutar los tests del proyecto utilizando <code>pytest</code> desde terminal con el comando <code>PYTHONPATH=. pytest tests/test_lavadero_unittest.py -v</code>.</p>
+<h2 id="crear-el-entorno-virtual">Crear el entorno virtual</h2>
+<p>Desde la raíz del proyecto, crea un entorno virtual llamado <code>venv</code> con:</p>
+<pre><code>python3 -m venv venv
+</code></pre>
+<p>Este comando genera una carpeta <code>venv/</code> con una instalación aislada de Python y sus paquetes.</p>
+<h2 id="activar-el-entorno-virtual">Activar el entorno virtual</h2>
+<p>Cada vez que vayas a trabajar con el proyecto (instalar paquetes o lanzar tests), activa el entorno virtual:</p>
+<pre><code>source venv/bin/activate
+</code></pre>
+<p>Al activarlo, el intérprete y los paquetes que se usarán serán los de <code>venv</code>, no los del sistema.</p>
+<p>Si aún no lo has hecho en este entorno, instala <code>pytest</code> una vez:</p>
+<pre><code>pip install pytest
+</code></pre>
+<h2 id="ejecutar-el-fichero-de-tests-principal">Ejecutar el fichero de tests principal</h2>
+<p>Con el <code>venv</code> activado y situado en la raíz del proyecto, ejecuta el fichero de tests <code>tests/test_lavadero_unittest.py</code> con:</p>
+<pre><code>PYTHONPATH=. pytest tests/test_lavadero_unittest.py -v
+</code></pre>
+<p>Al finalizar, se mostrará un resumen con el número de tests ejecutados y cuántos han pasado o fallado.</p>
+<h2 id="ciclo-de-depuracion-con-pytest">Ciclo de depuración con pytest</h2>
+<p>Durante la corrección de errores el ciclo habitual es:</p>
+<ol>
+<li>Activar el entorno virtual (si no lo está):<br />
+<code>source venv/bin/activate</code></li>
+<li>Modificar el código de la aplicación o del test.</li>
+<li>Guardar los cambios.</li>
+<li>Volver a lanzar los tests con:</li>
+</ol>
+<p><code>PYTHONPATH=. pytest tests/test_lavadero_unittest.py -v</code></p>
+<p>De este modo validas rápidamente si los cambios han corregido el fallo sin necesidad de ejecutar toda la suite de tests completa.</p>
+<h2 id="evidencias-graficas">Evidencias gráficas</h2>
+<p>A continuación se incluyen capturas relacionadas con la ejecución de tests, la aparición de fallos y sus soluciones.<br />
+Se asume que las imágenes están ubicadas en la carpeta <code>docs/img/</code> del proyecto.</p>
+<h3 id="fallo-visto-antes-de-empezar-con-los-tests">Fallo visto antes de empezar con los tests</h3>
+<p>El nombre del método estaba mal, y no se hace bien la llamada al método</p>
+<p><img alt="Nombre mal configurado" src="../img/nombremal.png" />  </p>
+<p><img alt="Nombre bien configurado" src="../img/nombrebien.png" />  </p>
+<h3 id="capturas-de-fallos-en-los-tests">Capturas de fallos en los tests</h3>
+<p><img alt="Fallo 3 en tests" src="../img/fallo3.png" /><br />
+<img alt="Fallo 5 en tests" src="../img/fallo5.png" /><br />
+<img alt="Fallo 8 en tests" src="../img/fallo8.png" /><br />
+<img alt="Fallo 10 en tests" src="../img/fallo10.png" /><br />
+<img alt="Fallo 12 en tests" src="../img/fallo12.png" /><br />
+<img alt="Fallos en los tests" src="../img/fallostests.png" /><br />
+Al ejecutar el test por primera vez, dio varios errores que fueron solucionados, pero uno de esos errores, corregía otros 2 errores que había con el precio, por lo que al ejecutar por segunda vez los tests, salieron esos fallos
+<img alt="Nuevos fallos detectados" src="../img/nuevosfallos.png" />  </p>
+<h3 id="capturas-de-y-soluciones">Capturas de y soluciones</h3>
+<p><img alt="Solución 3" src="../img/sol3.png" /><br />
+<img alt="Solución 5" src="../img/sol5.png" /><br />
+<img alt="Solución 8" src="../img/sol8.png" /><br />
+<img alt="Solución 10" src="../img/sol10.png" /><br />
+<img alt="Solución 12" src="../img/sol12.png" /><br />
+Una vez el test se ejecuta varias veces, y se solucionan los errores que van surgiendo, obetenemos el resultado de los tests como PASSED
+<img alt="Tests sin fallos" src="../img/nofallos.png" />  </p></div>
             </div>
         </div>
 
